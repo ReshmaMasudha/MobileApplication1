@@ -11,13 +11,15 @@ namespace MobileApplication1.ViewModels
         {
             public MainPageViewModel()
             {
-                EraseCommand = new Command(() =>
+            this.AllNotes = new ObservableCollection<string>();
+            EraseCommand = new Command(() =>
                 {
                     TheNote = string.Empty;
                 });
 
                 SaveCommand = new Command(() =>
                 {
+                    
                     AllNotes.Add(TheNote);
 
                     TheNote = string.Empty;
